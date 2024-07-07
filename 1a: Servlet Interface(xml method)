@@ -1,0 +1,89 @@
+//implementation of servlet configuration
+//using xml methods for configuration
+
+package in.ineuron.controller;
+
+import java.io.IOException;
+import java.io.PrintWriter;
+
+import javax.servlet.Servlet;
+import javax.servlet.ServletConfig;
+import javax.servlet.ServletException;
+import javax.servlet.ServletRequest;
+import javax.servlet.ServletResponse;
+
+/**
+ * Servlet implementation class FirstServlet
+ */
+public class FirstServlet implements Servlet 
+{
+    static
+    {
+    	System.out.println("loading.....");
+    }
+    /**
+     * Default constructor. 
+     */
+    public FirstServlet() 
+    {
+        // TODO Auto-generated constructor stub
+    	System.out.println("servlet instantiation...");
+    }
+
+	/**
+	 * @see Servlet#init(ServletConfig)
+	 */
+	public void init(ServletConfig config) throws ServletException 
+	{
+		// TODO Auto-generated method stub
+		System.out.println("servlet initialization....");
+		
+	}
+
+	/**
+	 * @see Servlet#destroy()
+	 */
+	public void destroy() 
+	{
+		// TODO Auto-generated method stub
+		System.out.println("servlet de-instantiation...");
+	}
+
+	/**
+	 * @see Servlet#getServletConfig()
+	 */
+	public ServletConfig getServletConfig() 
+	{
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	/**
+	 * @see Servlet#getServletInfo()
+	 */
+	public String getServletInfo() 
+	{
+		// TODO Auto-generated method stub
+		return null; 
+	}
+
+	/**
+	 * @see Servlet#service(ServletRequest request, ServletResponse response)
+	 */
+	public void service(ServletRequest request, ServletResponse response) throws ServletException, IOException 
+	{
+		// TODO Auto-generated method stub
+		System.out.println("providing service");
+		response.setContentType("text/html");
+		PrintWriter out = response.getWriter();
+		out.println("<html><head><title>Output</title></head>");
+		out.println("<body>");
+		out.println("<h1 style='color:blue'><marquee>Welcome to servlet coding... this is your first program on server </marquee></h1>");
+		out.println("</body>");
+		out.println("</html>");
+		
+		out.close();
+
+	}
+
+}
